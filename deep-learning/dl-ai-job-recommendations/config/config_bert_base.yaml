@@ -1,0 +1,26 @@
+data:
+  test_size: 0.15
+  val_size: 0.15
+  salary_classes: 3
+
+train:
+  batch_size: 64
+  head_lr: 0.001
+  lm_lr: 0.00002
+  n_epochs: 3
+  head_phase_epochs: 0
+  num_workers: 4
+  seed: 42
+  max_length: 256
+  weight_decay: 0.01
+
+network:
+  model: bert_baseline
+  pretrained_model_name: bert-base-uncased  # options: bert-base, bert-large, distilbert-base, bert-base-uncased,  bert-large-uncased, distilbert-base-uncased
+  freeze_bert: false
+
+optimizer:
+  type: adamw # adamw or sgd
+  weight_decay: 0.01
+  betas: [0.9, 0.999] # only for adamw
+  momentum: 0.9 # only for sgd
